@@ -1,0 +1,49 @@
+{
+    "name": "cucumberstepgenerator",
+    "displayName": "cucumberstepgenerator",
+    "description": "VS Code extension to generate cucumber feature steps",
+    "version": "0.0.1",
+    "publisher": "viqash12",
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.generateStep"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.generateStep",
+                "title": "Cucumber Step Generator"
+            }
+        ],
+            "keybindings": [{
+                "command": "extension.generateStep",
+                "key": "ctrl+1",
+                "mac": "cmd+",
+                "when": "editorTextFocus"
+            }]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6"
+    },
+    "dependencies": {
+        "@types/copy-paste": "^1.1.30",
+        "copy-paste": "^1.3.0"
+    }
+}
