@@ -92,7 +92,7 @@ function getStepTypeForAnd(selection: any, editor: vscode.TextEditor): string
     for (let i = selection.start.line - 1; i < editor.document.lineCount; i--)
     {
         let previousLineText = editor.document.lineAt(i).text.trim();
-        if (previousLineText.startsWith('And'))
+        if (previousLineText.startsWith('And') || previousLineText.startsWith('|'))
             continue;
         return decapitalizeFirstLetter(previousLineText.split(' ')[0]);
     }
